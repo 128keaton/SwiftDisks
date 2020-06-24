@@ -12,8 +12,8 @@ import SwiftDisks
 class APFSVolumeNode: ChildNode {
     func setAPFSVolumeInfo(info: RawAPFSVolume) {
         self.size = info.size
-        self.mountPoint = info.mountPoint ?? "(not mounted)"
-        self.volumeName = info.volumeName ?? "(no name)"
+        self.mountPoint = info.mountPoint ?? "No Mount Point"
+        self.volumeName = info.volumeName ?? "No Name"
         self.deviceID = info.deviceIdentifier
         self.type = .apfsVolume
     }
