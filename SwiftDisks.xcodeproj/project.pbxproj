@@ -8,16 +8,56 @@
 
 /* Begin PBXBuildFile section */
 		8A32C4E424A3DEBD0048CE7E /* SwiftDisks.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A32C4E224A3DEBD0048CE7E /* SwiftDisks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A32C4EB24A3DECF0048CE7E /* SwiftDisks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32C4EA24A3DECF0048CE7E /* SwiftDisks.swift */; };
+		8A32C4F124A3DEFC0048CE7E /* DiskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32C4ED24A3DEFB0048CE7E /* DiskList.swift */; };
+		8A32C4F224A3DEFC0048CE7E /* DisksAndPartitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32C4EE24A3DEFB0048CE7E /* DisksAndPartitions.swift */; };
+		8A32C4F324A3DEFC0048CE7E /* RawAPFSVolume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32C4EF24A3DEFB0048CE7E /* RawAPFSVolume.swift */; };
+		8A32C4F424A3DEFC0048CE7E /* APFSPhysicalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32C4F024A3DEFB0048CE7E /* APFSPhysicalStore.swift */; };
+		8A32C4F624A3DFBB0048CE7E /* list-disks-json.sh in Resources */ = {isa = PBXBuildFile; fileRef = 8A32C4F524A3DFBB0048CE7E /* list-disks-json.sh */; };
+		8A32C4FF24A3DFE50048CE7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32C4FE24A3DFE50048CE7E /* AppDelegate.swift */; };
+		8A32C50124A3DFE50048CE7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32C50024A3DFE50048CE7E /* ViewController.swift */; };
+		8A32C50324A3DFE70048CE7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A32C50224A3DFE70048CE7E /* Assets.xcassets */; };
+		8A32C50624A3DFE80048CE7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A32C50424A3DFE80048CE7E /* Main.storyboard */; };
+		8A67282824A3E23E008E0CA4 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67282724A3E23E008E0CA4 /* Disk.swift */; };
+		8A67282D24A3EBFC008E0CA4 /* DiskNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67282C24A3EBFC008E0CA4 /* DiskNode.swift */; };
+		8A67282F24A3EC0E008E0CA4 /* ChildNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67282E24A3EC0E008E0CA4 /* ChildNode.swift */; };
+		8A67283124A3EE64008E0CA4 /* APFSVolumeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67283024A3EE64008E0CA4 /* APFSVolumeNode.swift */; };
+		8A67283324A3F000008E0CA4 /* APFSPhysicalStoreNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67283224A3F000008E0CA4 /* APFSPhysicalStoreNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8A32C4DF24A3DEBD0048CE7E /* SwiftDisks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftDisks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A32C4E224A3DEBD0048CE7E /* SwiftDisks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftDisks.h; sourceTree = "<group>"; };
 		8A32C4E324A3DEBD0048CE7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A32C4EA24A3DECF0048CE7E /* SwiftDisks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDisks.swift; sourceTree = "<group>"; };
+		8A32C4ED24A3DEFB0048CE7E /* DiskList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskList.swift; sourceTree = "<group>"; };
+		8A32C4EE24A3DEFB0048CE7E /* DisksAndPartitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisksAndPartitions.swift; sourceTree = "<group>"; };
+		8A32C4EF24A3DEFB0048CE7E /* RawAPFSVolume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawAPFSVolume.swift; sourceTree = "<group>"; };
+		8A32C4F024A3DEFB0048CE7E /* APFSPhysicalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APFSPhysicalStore.swift; sourceTree = "<group>"; };
+		8A32C4F524A3DFBB0048CE7E /* list-disks-json.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "list-disks-json.sh"; sourceTree = "<group>"; };
+		8A32C4FC24A3DFE50048CE7E /* SwiftDisksDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDisksDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A32C4FE24A3DFE50048CE7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8A32C50024A3DFE50048CE7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8A32C50224A3DFE70048CE7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A32C50524A3DFE80048CE7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8A32C50724A3DFE80048CE7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A32C50824A3DFE80048CE7E /* SwiftDisksDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftDisksDemo.entitlements; sourceTree = "<group>"; };
+		8A67282724A3E23E008E0CA4 /* Disk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
+		8A67282C24A3EBFC008E0CA4 /* DiskNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskNode.swift; sourceTree = "<group>"; };
+		8A67282E24A3EC0E008E0CA4 /* ChildNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildNode.swift; sourceTree = "<group>"; };
+		8A67283024A3EE64008E0CA4 /* APFSVolumeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APFSVolumeNode.swift; sourceTree = "<group>"; };
+		8A67283224A3F000008E0CA4 /* APFSPhysicalStoreNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APFSPhysicalStoreNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8A32C4DC24A3DEBD0048CE7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A32C4F924A3DFE50048CE7E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -31,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				8A32C4E124A3DEBD0048CE7E /* SwiftDisks */,
+				8A32C4FD24A3DFE50048CE7E /* SwiftDisksDemo */,
 				8A32C4E024A3DEBD0048CE7E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				8A32C4DF24A3DEBD0048CE7E /* SwiftDisks.framework */,
+				8A32C4FC24A3DFE50048CE7E /* SwiftDisksDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -46,10 +88,74 @@
 		8A32C4E124A3DEBD0048CE7E /* SwiftDisks */ = {
 			isa = PBXGroup;
 			children = (
+				8A32C4F724A3DFBE0048CE7E /* Scripts */,
+				8A32C4EC24A3DEF10048CE7E /* Models */,
 				8A32C4E224A3DEBD0048CE7E /* SwiftDisks.h */,
 				8A32C4E324A3DEBD0048CE7E /* Info.plist */,
+				8A32C4EA24A3DECF0048CE7E /* SwiftDisks.swift */,
 			);
 			path = SwiftDisks;
+			sourceTree = "<group>";
+		};
+		8A32C4EC24A3DEF10048CE7E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8A67282624A3E22F008E0CA4 /* Output */,
+				8A67282524A3E226008E0CA4 /* Decoder */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8A32C4F724A3DFBE0048CE7E /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				8A32C4F524A3DFBB0048CE7E /* list-disks-json.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		8A32C4FD24A3DFE50048CE7E /* SwiftDisksDemo */ = {
+			isa = PBXGroup;
+			children = (
+				8A67282B24A3EBF1008E0CA4 /* Nodes */,
+				8A32C4FE24A3DFE50048CE7E /* AppDelegate.swift */,
+				8A32C50024A3DFE50048CE7E /* ViewController.swift */,
+				8A32C50224A3DFE70048CE7E /* Assets.xcassets */,
+				8A32C50424A3DFE80048CE7E /* Main.storyboard */,
+				8A32C50724A3DFE80048CE7E /* Info.plist */,
+				8A32C50824A3DFE80048CE7E /* SwiftDisksDemo.entitlements */,
+			);
+			path = SwiftDisksDemo;
+			sourceTree = "<group>";
+		};
+		8A67282524A3E226008E0CA4 /* Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				8A32C4F024A3DEFB0048CE7E /* APFSPhysicalStore.swift */,
+				8A32C4EF24A3DEFB0048CE7E /* RawAPFSVolume.swift */,
+				8A32C4ED24A3DEFB0048CE7E /* DiskList.swift */,
+				8A32C4EE24A3DEFB0048CE7E /* DisksAndPartitions.swift */,
+			);
+			path = Decoder;
+			sourceTree = "<group>";
+		};
+		8A67282624A3E22F008E0CA4 /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				8A67282724A3E23E008E0CA4 /* Disk.swift */,
+			);
+			path = Output;
+			sourceTree = "<group>";
+		};
+		8A67282B24A3EBF1008E0CA4 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				8A67282C24A3EBFC008E0CA4 /* DiskNode.swift */,
+				8A67282E24A3EC0E008E0CA4 /* ChildNode.swift */,
+				8A67283024A3EE64008E0CA4 /* APFSVolumeNode.swift */,
+				8A67283224A3F000008E0CA4 /* APFSPhysicalStoreNode.swift */,
+			);
+			path = Nodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,16 +190,38 @@
 			productReference = 8A32C4DF24A3DEBD0048CE7E /* SwiftDisks.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		8A32C4FB24A3DFE50048CE7E /* SwiftDisksDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A32C50924A3DFE80048CE7E /* Build configuration list for PBXNativeTarget "SwiftDisksDemo" */;
+			buildPhases = (
+				8A32C4F824A3DFE50048CE7E /* Sources */,
+				8A32C4F924A3DFE50048CE7E /* Frameworks */,
+				8A32C4FA24A3DFE50048CE7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftDisksDemo;
+			productName = SwiftDisksDemo;
+			productReference = 8A32C4FC24A3DFE50048CE7E /* SwiftDisksDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		8A32C4D624A3DEBD0048CE7E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Keaton Burleson";
 				TargetAttributes = {
 					8A32C4DE24A3DEBD0048CE7E = {
+						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
+					};
+					8A32C4FB24A3DFE50048CE7E = {
 						CreatedOnToolsVersion = 11.5;
 					};
 				};
@@ -112,6 +240,7 @@
 			projectRoot = "";
 			targets = (
 				8A32C4DE24A3DEBD0048CE7E /* SwiftDisks */,
+				8A32C4FB24A3DFE50048CE7E /* SwiftDisksDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -121,6 +250,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A32C4F624A3DFBB0048CE7E /* list-disks-json.sh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A32C4FA24A3DFE50048CE7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A32C50324A3DFE70048CE7E /* Assets.xcassets in Resources */,
+				8A32C50624A3DFE80048CE7E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,10 +270,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A67282824A3E23E008E0CA4 /* Disk.swift in Sources */,
+				8A32C4F124A3DEFC0048CE7E /* DiskList.swift in Sources */,
+				8A32C4F324A3DEFC0048CE7E /* RawAPFSVolume.swift in Sources */,
+				8A32C4EB24A3DECF0048CE7E /* SwiftDisks.swift in Sources */,
+				8A32C4F224A3DEFC0048CE7E /* DisksAndPartitions.swift in Sources */,
+				8A32C4F424A3DEFC0048CE7E /* APFSPhysicalStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A32C4F824A3DFE50048CE7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A67283324A3F000008E0CA4 /* APFSPhysicalStoreNode.swift in Sources */,
+				8A67282F24A3EC0E008E0CA4 /* ChildNode.swift in Sources */,
+				8A67282D24A3EBFC008E0CA4 /* DiskNode.swift in Sources */,
+				8A67283124A3EE64008E0CA4 /* APFSVolumeNode.swift in Sources */,
+				8A32C50124A3DFE50048CE7E /* ViewController.swift in Sources */,
+				8A32C4FF24A3DFE50048CE7E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8A32C50424A3DFE80048CE7E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A32C50524A3DFE80048CE7E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8A32C4E524A3DEBD0048CE7E /* Debug */ = {
@@ -259,6 +428,32 @@
 		8A32C4E824A3DEBD0048CE7E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SwiftDisks/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kbrleson.SwiftDisks;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8A32C4E924A3DEBD0048CE7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -277,27 +472,40 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
-			name = Debug;
+			name = Release;
 		};
-		8A32C4E924A3DEBD0048CE7E /* Release */ = {
+		8A32C50A24A3DFE80048CE7E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SwiftDisksDemo/SwiftDisksDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SwiftDisks/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				INFOPLIST_FILE = SwiftDisksDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kbrleson.SwiftDisks;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = kbrleson.SwiftDisksDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8A32C50B24A3DFE80048CE7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SwiftDisksDemo/SwiftDisksDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SwiftDisksDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kbrleson.SwiftDisksDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -319,6 +527,15 @@
 			buildConfigurations = (
 				8A32C4E824A3DEBD0048CE7E /* Debug */,
 				8A32C4E924A3DEBD0048CE7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A32C50924A3DFE80048CE7E /* Build configuration list for PBXNativeTarget "SwiftDisksDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A32C50A24A3DFE80048CE7E /* Debug */,
+				8A32C50B24A3DFE80048CE7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
