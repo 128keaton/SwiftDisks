@@ -18,12 +18,23 @@
 		8A32C50124A3DFE50048CE7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32C50024A3DFE50048CE7E /* ViewController.swift */; };
 		8A32C50324A3DFE70048CE7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A32C50224A3DFE70048CE7E /* Assets.xcassets */; };
 		8A32C50624A3DFE80048CE7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A32C50424A3DFE80048CE7E /* Main.storyboard */; };
+		8A511CB724A40A2E00D93AA7 /* MenuOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A511CB624A40A2E00D93AA7 /* MenuOutlineView.swift */; };
 		8A67282824A3E23E008E0CA4 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67282724A3E23E008E0CA4 /* Disk.swift */; };
 		8A67282D24A3EBFC008E0CA4 /* DiskNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67282C24A3EBFC008E0CA4 /* DiskNode.swift */; };
 		8A67282F24A3EC0E008E0CA4 /* ChildNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67282E24A3EC0E008E0CA4 /* ChildNode.swift */; };
 		8A67283124A3EE64008E0CA4 /* APFSVolumeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67283024A3EE64008E0CA4 /* APFSVolumeNode.swift */; };
 		8A67283324A3F000008E0CA4 /* APFSPhysicalStoreNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67283224A3F000008E0CA4 /* APFSPhysicalStoreNode.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8A511CB424A4090200D93AA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A32C4D624A3DEBD0048CE7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A32C4DE24A3DEBD0048CE7E;
+			remoteInfo = SwiftDisks;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8A32C4DF24A3DEBD0048CE7E /* SwiftDisks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftDisks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +53,7 @@
 		8A32C50524A3DFE80048CE7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A32C50724A3DFE80048CE7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A32C50824A3DFE80048CE7E /* SwiftDisksDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftDisksDemo.entitlements; sourceTree = "<group>"; };
+		8A511CB624A40A2E00D93AA7 /* MenuOutlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOutlineView.swift; sourceTree = "<group>"; };
 		8A67282724A3E23E008E0CA4 /* Disk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
 		8A67282C24A3EBFC008E0CA4 /* DiskNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskNode.swift; sourceTree = "<group>"; };
 		8A67282E24A3EC0E008E0CA4 /* ChildNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildNode.swift; sourceTree = "<group>"; };
@@ -124,6 +136,7 @@
 				8A32C50424A3DFE80048CE7E /* Main.storyboard */,
 				8A32C50724A3DFE80048CE7E /* Info.plist */,
 				8A32C50824A3DFE80048CE7E /* SwiftDisksDemo.entitlements */,
+				8A511CB624A40A2E00D93AA7 /* MenuOutlineView.swift */,
 			);
 			path = SwiftDisksDemo;
 			sourceTree = "<group>";
@@ -201,6 +214,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8A511CB524A4090200D93AA7 /* PBXTargetDependency */,
 			);
 			name = SwiftDisksDemo;
 			productName = SwiftDisksDemo;
@@ -289,10 +303,19 @@
 				8A67283124A3EE64008E0CA4 /* APFSVolumeNode.swift in Sources */,
 				8A32C50124A3DFE50048CE7E /* ViewController.swift in Sources */,
 				8A32C4FF24A3DFE50048CE7E /* AppDelegate.swift in Sources */,
+				8A511CB724A40A2E00D93AA7 /* MenuOutlineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8A511CB524A4090200D93AA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A32C4DE24A3DEBD0048CE7E /* SwiftDisks */;
+			targetProxy = 8A511CB424A4090200D93AA7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8A32C50424A3DFE80048CE7E /* Main.storyboard */ = {

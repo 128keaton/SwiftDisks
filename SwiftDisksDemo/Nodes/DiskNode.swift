@@ -19,5 +19,9 @@ enum NodeType: Int, Codable {
 class DiskNode: NSObject, Codable {
     var type: NodeType = .disk
     var deviceID: String = ""
+    var content: String = ""
+    var size: Int = 0
+    var mountPoint: String = ""
+    var volumeName: String = ""
     @objc dynamic var children = [ChildNode]()
 }

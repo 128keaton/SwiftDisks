@@ -10,7 +10,7 @@ import Cocoa
 import SwiftDisks
 
 class ViewController: NSViewController {
-    @IBOutlet var outlineView: NSOutlineView?
+    @IBOutlet var outlineView: MenuOutlineView?
 
     var nodes: [DiskNode] = []
 
@@ -21,6 +21,10 @@ class ViewController: NSViewController {
             let diskNodes: [DiskNode] = allDisks.map {
                 let node = DiskNode()
                 node.deviceID = $0.deviceIdentifier
+                node.size = $0.size
+                node.content = $0.content
+                node.mountPoint = $0.mountPoint ?? "None"
+                node.volumeName = $0.volumeName ?? "None"
 
                 if let apfsVolumes = $0.apfsVolumes {
                     let mappedVolumes: [ChildNode] = apfsVolumes.map {
@@ -54,16 +58,36 @@ class ViewController: NSViewController {
 
 
     }
-
-    override var representedObject: Any? {
-        didSet {
-            // Update the view, if already loaded.
-        }
-    }
-
-
 }
 
+extension ViewController: MenuOutlineViewDelegate {
+    func outlineView(outlineView: NSOutlineView, menuForItem item: AnyObject) -> NSMenu? {
+        var menu: NSMenu? = nil
+
+        if let item = item as? DiskNode {
+            menu = NSMenu(title: "Disk")
+            menu?.addItem(withTitle: menu!.title, action: nil, keyEquivalent: "")
+            menu?.addItem(withTitle: "Device ID: \(item.deviceID)", action: nil, keyEquivalent: "")
+            menu?.addItem(withTitle: "Size: \(item.size)", action: nil, keyEquivalent: "")
+            menu?.addItem(withTitle: "Content: \(item.content)", action: nil, keyEquivalent: "")
+            menu?.addItem(withTitle: "Mount Point: \(item.mountPoint)", action: nil, keyEquivalent: "")
+            menu?.addItem(withTitle: "Volume Name: \(item.volumeName)", action: nil, keyEquivalent: "")
+        } else if let item = item as? APFSVolumeNode {
+            menu = NSMenu(title: "APFS Volume")
+            menu?.addItem(withTitle: menu!.title, action: nil, keyEquivalent: "")
+            menu?.addItem(withTitle: "Device ID: \(item.deviceID)", action: nil, keyEquivalent: "")
+            menu?.addItem(withTitle: "Size: \(item.size)", action: nil, keyEquivalent: "")
+            menu?.addItem(withTitle: "Mount Point: \(item.mountPoint)", action: nil, keyEquivalent: "")
+            menu?.addItem(withTitle: "Volume Name: \(item.volumeName)", action: nil, keyEquivalent: "")
+        } else if let item = item as? APFSPhysicalStoreNode {
+            menu = NSMenu(title: "APFS Physical Store")
+            menu?.addItem(withTitle: menu!.title, action: nil, keyEquivalent: "")
+            menu?.addItem(withTitle: "Device ID: \(item.deviceID)", action: nil, keyEquivalent: "")
+        }
+
+        return menu
+    }
+}
 
 extension ViewController: NSOutlineViewDelegate, NSOutlineViewDataSource {
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
