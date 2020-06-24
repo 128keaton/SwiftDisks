@@ -36,6 +36,16 @@ class ViewController: NSViewController {
                     node.children.append(contentsOf: mappedVolumes)
                 }
 
+                if let partitions = $0.partitions {
+                    let mappedVolumes: [ChildNode] = partitions.map {
+                        let apfsVolumeNode = APFSVolumeNode()
+                        apfsVolumeNode.setAPFSVolumeInfo(info: $0)
+                        return apfsVolumeNode
+                    }
+
+                    node.children.append(contentsOf: mappedVolumes)
+                }
+
                 if let apfsPhysicalStores = $0.apfsPhysicalStores {
                     let mappedStores: [ChildNode] = apfsPhysicalStores.map {
                         let apfsPhysicalStoreNode = APFSPhysicalStoreNode()
