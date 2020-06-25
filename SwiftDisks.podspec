@@ -15,5 +15,8 @@ Pod::Spec.new do |spec|
   spec.source_files  = "SwiftDisks", "SwiftDisks/**/*.{h,m,swift}"
   spec.exclude_files = "SwiftDisksDemo"
   spec.requires_arc = true
-  spec.resources = "SwiftDisks/Scripts/**/*.sh"
+  spec.resource_bundles = {
+    'SwiftDisks' => ['SwiftDisks/Scripts/**/*.sh']
+  }
+  
 end

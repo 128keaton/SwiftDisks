@@ -52,10 +52,24 @@ public class SwiftDisks {
             }
         }
     }
+    
+    private static func getScriptPath() -> String {
+        let localBundle = Bundle(for: self)
+        
+        print(localBundle.bundlePath)
+        if let bundleURL = localBundle.url(forResource: "SwiftDisks", withExtension: "bundle"),
+            let bundle = Bundle(url: bundleURL) {
+            return "\(bundle.resourcePath!)/list-disks-json.sh"
+        } else if let resourcePath = localBundle.resourcePath {
+            return "\(resourcePath)/list-disks-json.sh"
+        }
+        
+        return ""
+    }
 
     /// Get all disks available with a callback
     public static func getAllDisks(bypassCache: Bool = true, _ callback: @escaping ([DiskNode]) -> ()) {
-        let scriptPath = "\(Bundle(identifier: "kbrleson.SwiftDisks")!.resourcePath!)/list-disks-json.sh"
+        let scriptPath = getScriptPath()
         var allDisks: [DiskNode] = []
         
         if (!bypassCache), let cachedDisks = self.cache.object(forKey: "cachedDisks" as AnyObject) as? NSArray {
