@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol SwiftDisksDelegate {
-    func disksChanged()
+    func disksChanged(_ information: DiskChangeInformation)
 }

@@ -232,7 +232,8 @@ class ViewController: NSViewController {
 }
 
 extension ViewController: SwiftDisksDelegate {
-    func disksChanged() {
+    func disksChanged(_ information: DiskChangeInformation) {
+        print(information)
         if (self.lockedOverlay == nil) {
             self.getAllDisks(lockUI: true)
         }
