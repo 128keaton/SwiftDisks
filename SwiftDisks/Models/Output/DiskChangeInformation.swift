@@ -14,8 +14,15 @@ public enum DiskChangeType {
 }
 
 public struct DiskChangeInformation {
-    var changeType: DiskChangeType
-    var mountPoint: String
-    var volumeName: String
-    var mountPointURL: URL?
+    /// Change type of the disk change. Will either me 'removal' or 'mounted'
+    public var changeType: DiskChangeType
+
+    /// Mount point that was mounted or removed
+    public var mountPoint: String
+
+    /// Volume name that was mounted or removed
+    public var volumeName: String
+
+    /// URL to volume that was mounted or removed
+    public var mountPointURL: URL?
 }

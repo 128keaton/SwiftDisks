@@ -233,7 +233,10 @@ class ViewController: NSViewController {
 
 extension ViewController: SwiftDisksDelegate {
     func disksChanged(_ information: DiskChangeInformation) {
-        print(information)
+        if (information.changeType == .mounted), let mountPointURL = information.mountPointURL {
+            NSWorkspace.shared.open(mountPointURL)
+        }
+        
         if (self.lockedOverlay == nil) {
             self.getAllDisks(lockUI: true)
         }
