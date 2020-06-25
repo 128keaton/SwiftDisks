@@ -56,7 +56,6 @@ public class SwiftDisks {
     private static func getScriptPath() -> String {
         let localBundle = Bundle(for: self)
         
-        print(localBundle.bundlePath)
         if let bundleURL = localBundle.url(forResource: "SwiftDisks", withExtension: "bundle"),
             let bundle = Bundle(url: bundleURL) {
             return "\(bundle.resourcePath!)/list-disks-json.sh"
