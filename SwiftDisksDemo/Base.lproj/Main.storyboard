@@ -11,9 +11,9 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="SwiftDisksDemo" id="1Xt-HY-uBw">
+                            <menuItem title="SwiftDisks" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="SwiftDisksDemo" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="SwiftDisks" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
                                         <menuItem title="About SwiftDisksDemo" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -62,6 +62,13 @@
                                                 <action selector="reloadDisksFromCache:" target="Voe-Tx-rLC" id="T25-EZ-gbY"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="Mjw-Pi-wHg"/>
+                                        <menuItem title="Open in Finder on Mount" onStateImage="NSMenuOnStateTemplate" id="zrV-zc-4xf">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="toggleOpenInFinder:" target="Voe-Tx-rLC" id="bbL-Id-uPi"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -107,13 +114,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="0.0" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="E4E-4c-tZH">
-                                <rect key="frame" x="0.0" y="0.0" width="477" height="225"/>
+                                <rect key="frame" x="0.0" y="0.0" width="477" height="209"/>
                                 <clipView key="contentView" drawsBackground="NO" id="TE4-Xr-CEP">
-                                    <rect key="frame" x="0.0" y="0.0" width="477" height="225"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="477" height="209"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" autoresizesOutlineColumn="YES" outlineTableColumn="gAj-lQ-CTA" id="qxF-W3-e2c" customClass="MenuOutlineView" customModule="SwiftDisksDemo" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="477" height="225"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="477" height="209"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -194,7 +201,7 @@
                                 </clipView>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="477" id="Ugi-gh-Xpa"/>
-                                    <constraint firstAttribute="height" constant="225" id="oTe-T0-Ufc"/>
+                                    <constraint firstAttribute="height" constant="209" id="oTe-T0-Ufc"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="e1g-FN-9hL">
                                     <rect key="frame" x="-100" y="-100" width="477" height="16"/>
@@ -208,11 +215,11 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="E4E-4c-tZH" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="3sQ-9b-Gsb"/>
-                            <constraint firstItem="E4E-4c-tZH" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="6w1-K7-9t4"/>
-                            <constraint firstItem="E4E-4c-tZH" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="9Yb-D7-mbJ"/>
+                            <constraint firstItem="E4E-4c-tZH" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="36" id="6w1-K7-9t4"/>
+                            <constraint firstItem="E4E-4c-tZH" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="36" id="9Yb-D7-mbJ"/>
                             <constraint firstItem="E4E-4c-tZH" firstAttribute="width" secondItem="m2S-Jp-Qdl" secondAttribute="width" id="D9g-I6-Yvt"/>
                             <constraint firstAttribute="bottom" secondItem="E4E-4c-tZH" secondAttribute="bottom" id="Fek-bL-zJy"/>
-                            <constraint firstItem="E4E-4c-tZH" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" constant="10" id="aWS-Gf-Vfe"/>
+                            <constraint firstItem="E4E-4c-tZH" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" constant="18" id="aWS-Gf-Vfe"/>
                             <constraint firstItem="E4E-4c-tZH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="dqI-Tk-HmX"/>
                             <constraint firstAttribute="trailing" secondItem="E4E-4c-tZH" secondAttribute="trailing" id="gOd-oK-ACj"/>
                             <constraint firstItem="E4E-4c-tZH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="jRL-Vg-UR5"/>
@@ -227,4 +234,7 @@
             <point key="canvasLocation" x="74.5" y="654.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSMenuOnStateTemplate" width="12" height="12"/>
+    </resources>
 </document>

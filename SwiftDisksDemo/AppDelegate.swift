@@ -30,13 +30,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             viewController.getAllDisks(lockUI: true)
         }
     }
-    
+
     @IBAction func reloadDisksFromCache(_ sender: NSMenuItem) {
         if let viewController = self.viewController {
             viewController.getCachedDisks()
         }
     }
 
+    @IBAction func toggleOpenInFinder(_ sender: NSMenuItem) {
+        let defaults = UserDefaults.standard
+
+        let openInFinder = defaults.bool(forKey: "openInFinder")
+
+        if openInFinder {
+            sender.state = .off
+        } else {
+            sender.state = .on
+        }
+
+        defaults.set(!openInFinder, forKey: "openInFinder")
+        defaults.synchronize()
+    }
 
 }
 

@@ -233,7 +233,7 @@ class ViewController: NSViewController {
 
 extension ViewController: SwiftDisksDelegate {
     func disksChanged(_ information: DiskChangeInformation) {
-        if (information.changeType == .mounted), let mountPointURL = information.mountPointURL {
+        if (information.changeType == .mounted), let mountPointURL = information.mountPointURL, UserDefaults.standard.bool(forKey: "openInFinder") {
             NSWorkspace.shared.open(mountPointURL)
         }
         
