@@ -7,20 +7,12 @@
 		<key>SwiftDisks.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<key>SwiftDisksDemo.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
-	</dict>
-	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>8A32C4FB24A3DFE50048CE7E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
+			<integer>1</integer>
 		</dict>
 	</dict>
 </dict>
