@@ -20,15 +20,7 @@ public class DiskNode: NSObject, Codable {
     @objc public dynamic var children = [ChildDiskNode]()
 
     public func isBootDrive() -> Bool {
-        if (isAPFS()) {
-            let preboot = self.children.first { (childDiskNode) -> Bool in
-                return childDiskNode.volumeName == "Preboot"
-            }
-
-            return preboot != nil
-        }
-        
-        return false
+        return isAPFS() && size >= 107374182400
     }
 
     public func isAPFS() -> Bool {
