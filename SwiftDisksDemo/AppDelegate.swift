@@ -30,6 +30,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             viewController.getAllDisks(lockUI: true)
         }
     }
+    
+    @IBAction func reloadDisksFromCache(_ sender: NSMenuItem) {
+        if let viewController = self.viewController {
+            viewController.getCachedDisks()
+        }
+    }
+
 
 }
 

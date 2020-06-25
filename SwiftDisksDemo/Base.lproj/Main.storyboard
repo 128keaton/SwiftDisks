@@ -57,6 +57,11 @@
                                                 <action selector="reloadDisks:" target="Voe-Tx-rLC" id="0hN-TE-nH2"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Reload Disks from Cache" keyEquivalent="R" id="PAZ-9G-I1H">
+                                            <connections>
+                                                <action selector="reloadDisksFromCache:" target="Voe-Tx-rLC" id="T25-EZ-gbY"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>

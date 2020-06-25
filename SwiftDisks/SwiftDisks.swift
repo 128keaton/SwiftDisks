@@ -11,45 +11,59 @@ import AppKit
 
 public class SwiftDisks {
     private static var instance: SwiftDisks?
-    private static var cachedDisks: [DiskNode] = []
-    
+    private static let cache = ExpiringCache()
+
     var delegate: SwiftDisksDelegate?
 
-    
+
     public static var safeMode: Bool = true {
         didSet {
             print("\(self.safeMode ? "Enabling" : "Disabling") Safe Mode")
         }
     }
-    
+
     /// Set the delegate for disk notifications
     public static func setDelegate(_ delegate: SwiftDisksDelegate) {
         if (self.instance == nil) {
             self.instance = SwiftDisks()
         }
-        
+
         self.instance?.delegate = delegate
     }
-    
+
     /// Listen for disk eject/unmount and mount
     public static func listenForDiskChanges() {
         if (self.instance == nil) {
             self.instance = SwiftDisks()
         }
-        
+
         self.instance?.registerSelfForNotifications()
     }
-    
+
     /// Get all disks cached
-    public static func getAllCachedDisks() -> [DiskNode] {
-        return self.cachedDisks
+    public static func getAllCachedDisks(callback: @escaping ([DiskNode]) -> ()) {
+        if let cachedDisks = self.cache.object(forKey: "cachedDisks" as AnyObject) as? NSArray {
+            callback(cachedDisks as! [DiskNode])
+            return
+        } else {
+            self.getAllDisks(bypassCache: true) { (allDisks) in
+                callback(allDisks)
+                self.cache.setObject(allDisks as AnyObject, forKey: "cachedDisks" as AnyObject)
+            }
+        }
     }
 
     /// Get all disks available with a callback
     public static func getAllDisks(bypassCache: Bool = true, _ callback: @escaping ([DiskNode]) -> ()) {
         let scriptPath = "\(Bundle(identifier: "kbrleson.SwiftDisks")!.resourcePath!)/list-disks-json.sh"
         var allDisks: [DiskNode] = []
-
+        
+        if (!bypassCache), let cachedDisks = self.cache.object(forKey: "cachedDisks" as AnyObject) as? NSArray {
+            allDisks = cachedDisks as! [DiskNode]
+            callback(allDisks)
+            return
+        }
+        
 
         TaskHelper.createTask(command: "/bin/bash", arguments: [scriptPath]) { (jsonData, error) in
             do {
@@ -60,8 +74,8 @@ public class SwiftDisks {
                 print("Error parsing Disk Utility output: \(error.localizedDescription)")
                 callback(allDisks)
             }
-            
-            self.cachedDisks = allDisks
+            self.cache.setObject(allDisks as AnyObject, forKey: "cachedDisks" as AnyObject)
+
         }
 
     }
@@ -82,7 +96,7 @@ public class SwiftDisks {
             print("This is the root drive or a boot drive and safe mode is enabled. Cannot eject.")
             return
         }
-        
+
         EjectUnmountHelper.ejectDisk(disk, force: force, completion: completion)
     }
 

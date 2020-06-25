@@ -31,6 +31,7 @@
 		8A5D0EA924A4F1F20009DAF5 /* EjectResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0EA824A4F1F20009DAF5 /* EjectResult.swift */; };
 		8A5D0EAB24A4F5490009DAF5 /* SwiftDisks+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0EAA24A4F5490009DAF5 /* SwiftDisks+Notifications.swift */; };
 		8A5D0EAD24A4F5A90009DAF5 /* SwiftDisks+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0EAC24A4F5A90009DAF5 /* SwiftDisks+Delegate.swift */; };
+		8A5D0EB024A4F8250009DAF5 /* ExpiringCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0EAF24A4F8250009DAF5 /* ExpiringCache.swift */; };
 		8A67282824A3E23E008E0CA4 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67282724A3E23E008E0CA4 /* Disk.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		8A5D0EA824A4F1F20009DAF5 /* EjectResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EjectResult.swift; sourceTree = "<group>"; };
 		8A5D0EAA24A4F5490009DAF5 /* SwiftDisks+Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftDisks+Notifications.swift"; sourceTree = "<group>"; };
 		8A5D0EAC24A4F5A90009DAF5 /* SwiftDisks+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftDisks+Delegate.swift"; sourceTree = "<group>"; };
+		8A5D0EAF24A4F8250009DAF5 /* ExpiringCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiringCache.swift; sourceTree = "<group>"; };
 		8A67282724A3E23E008E0CA4 /* Disk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 		8A32C4E124A3DEBD0048CE7E /* SwiftDisks */ = {
 			isa = PBXGroup;
 			children = (
+				8A5D0EAE24A4F8180009DAF5 /* Classes */,
 				8A5D0E9824A4DC740009DAF5 /* Helpers */,
 				8A32C4F724A3DFBE0048CE7E /* Scripts */,
 				8A32C4EC24A3DEF10048CE7E /* Models */,
@@ -177,6 +180,14 @@
 				8A5D0EA624A4F1C30009DAF5 /* EjectUnmountHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8A5D0EAE24A4F8180009DAF5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8A5D0EAF24A4F8250009DAF5 /* ExpiringCache.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		8A67282524A3E226008E0CA4 /* Decoder */ = {
@@ -333,6 +344,7 @@
 				8A5D0E9024A4D61F0009DAF5 /* ChildDiskNode.swift in Sources */,
 				8A5D0E9724A4D66E0009DAF5 /* APFSPhysicalStoreNode.swift in Sources */,
 				8A32C4F424A3DEFC0048CE7E /* APFSPhysicalStore.swift in Sources */,
+				8A5D0EB024A4F8250009DAF5 /* ExpiringCache.swift in Sources */,
 				8A5D0EA524A4EA2D0009DAF5 /* EraseResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
