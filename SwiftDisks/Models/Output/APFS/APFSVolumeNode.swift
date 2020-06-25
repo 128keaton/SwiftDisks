@@ -1,15 +1,14 @@
 //
 //  APFSVolumeNode.swift
-//  SwiftDisksDemo
+//  SwiftDisks
 //
-//  Created by Keaton Burleson on 6/24/20.
+//  Created by Keaton Burleson on 6/25/20.
 //  Copyright © 2020 Keaton Burleson. All rights reserved.
 //
 
 import Foundation
-import SwiftDisks
 
-class APFSVolumeNode: ChildNode {
+public class APFSVolumeNode: ChildDiskNode {
     func setAPFSVolumeInfo(info: RawAPFSVolume) {
         self.size = info.size
         self.mountPoint = info.mountPoint ?? "No Mount Point"

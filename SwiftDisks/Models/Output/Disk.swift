@@ -8,3 +8,36 @@
 
 import Foundation
 
+public class DiskNode: NSObject, Codable {
+    public var type: DiskNodeType = .disk
+    public var deviceID: String = ""
+    public var content: String = ""
+    public var size: Int = 0
+    public var mountPoint: String = ""
+    public var volumeName: String = ""
+    public var physicalDisk: DiskNode? = nil
+    
+    @objc public dynamic var children = [ChildDiskNode]()
+
+    public func isBootDrive() -> Bool {
+        if (isAPFS()) {
+            let preboot = self.children.first { (childDiskNode) -> Bool in
+                return childDiskNode.volumeName == "Preboot"
+            }
+
+            return preboot != nil
+        }
+        
+        return false
+    }
+
+    public func isAPFS() -> Bool {
+        let apfsPhysicalStore = self.children.first { (childDiskNode) -> Bool in
+            return childDiskNode.type == .apfsPhysicalStore
+        }
+
+        return apfsPhysicalStore != nil
+    }
+    
+
+}

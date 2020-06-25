@@ -19,11 +19,19 @@
 		8A32C50324A3DFE70048CE7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A32C50224A3DFE70048CE7E /* Assets.xcassets */; };
 		8A32C50624A3DFE80048CE7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A32C50424A3DFE80048CE7E /* Main.storyboard */; };
 		8A511CB724A40A2E00D93AA7 /* MenuOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A511CB624A40A2E00D93AA7 /* MenuOutlineView.swift */; };
+		8A5D0E9024A4D61F0009DAF5 /* ChildDiskNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0E8F24A4D61F0009DAF5 /* ChildDiskNode.swift */; };
+		8A5D0E9224A4D6340009DAF5 /* DiskNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0E9124A4D6340009DAF5 /* DiskNodeType.swift */; };
+		8A5D0E9424A4D64C0009DAF5 /* APFSVolumeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0E9324A4D64C0009DAF5 /* APFSVolumeNode.swift */; };
+		8A5D0E9724A4D66E0009DAF5 /* APFSPhysicalStoreNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0E9624A4D66E0009DAF5 /* APFSPhysicalStoreNode.swift */; };
+		8A5D0E9A24A4DC860009DAF5 /* FormatEraseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0E9924A4DC860009DAF5 /* FormatEraseHelper.swift */; };
+		8A5D0E9C24A4DD4A0009DAF5 /* NameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0E9B24A4DD4A0009DAF5 /* NameGenerator.swift */; };
+		8A5D0EA124A4DEF10009DAF5 /* TaskHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0EA024A4DEF10009DAF5 /* TaskHelper.swift */; };
+		8A5D0EA524A4EA2D0009DAF5 /* EraseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0EA424A4EA2D0009DAF5 /* EraseResult.swift */; };
+		8A5D0EA724A4F1C30009DAF5 /* EjectUnmountHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0EA624A4F1C30009DAF5 /* EjectUnmountHelper.swift */; };
+		8A5D0EA924A4F1F20009DAF5 /* EjectResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0EA824A4F1F20009DAF5 /* EjectResult.swift */; };
+		8A5D0EAB24A4F5490009DAF5 /* SwiftDisks+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0EAA24A4F5490009DAF5 /* SwiftDisks+Notifications.swift */; };
+		8A5D0EAD24A4F5A90009DAF5 /* SwiftDisks+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0EAC24A4F5A90009DAF5 /* SwiftDisks+Delegate.swift */; };
 		8A67282824A3E23E008E0CA4 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67282724A3E23E008E0CA4 /* Disk.swift */; };
-		8A67282D24A3EBFC008E0CA4 /* DiskNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67282C24A3EBFC008E0CA4 /* DiskNode.swift */; };
-		8A67282F24A3EC0E008E0CA4 /* ChildNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67282E24A3EC0E008E0CA4 /* ChildNode.swift */; };
-		8A67283124A3EE64008E0CA4 /* APFSVolumeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67283024A3EE64008E0CA4 /* APFSVolumeNode.swift */; };
-		8A67283324A3F000008E0CA4 /* APFSPhysicalStoreNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67283224A3F000008E0CA4 /* APFSPhysicalStoreNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,11 +62,19 @@
 		8A32C50724A3DFE80048CE7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A32C50824A3DFE80048CE7E /* SwiftDisksDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftDisksDemo.entitlements; sourceTree = "<group>"; };
 		8A511CB624A40A2E00D93AA7 /* MenuOutlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOutlineView.swift; sourceTree = "<group>"; };
+		8A5D0E8F24A4D61F0009DAF5 /* ChildDiskNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildDiskNode.swift; sourceTree = "<group>"; };
+		8A5D0E9124A4D6340009DAF5 /* DiskNodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskNodeType.swift; sourceTree = "<group>"; };
+		8A5D0E9324A4D64C0009DAF5 /* APFSVolumeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APFSVolumeNode.swift; sourceTree = "<group>"; };
+		8A5D0E9624A4D66E0009DAF5 /* APFSPhysicalStoreNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APFSPhysicalStoreNode.swift; sourceTree = "<group>"; };
+		8A5D0E9924A4DC860009DAF5 /* FormatEraseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatEraseHelper.swift; sourceTree = "<group>"; };
+		8A5D0E9B24A4DD4A0009DAF5 /* NameGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameGenerator.swift; sourceTree = "<group>"; };
+		8A5D0EA024A4DEF10009DAF5 /* TaskHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHelper.swift; sourceTree = "<group>"; };
+		8A5D0EA424A4EA2D0009DAF5 /* EraseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EraseResult.swift; sourceTree = "<group>"; };
+		8A5D0EA624A4F1C30009DAF5 /* EjectUnmountHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EjectUnmountHelper.swift; sourceTree = "<group>"; };
+		8A5D0EA824A4F1F20009DAF5 /* EjectResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EjectResult.swift; sourceTree = "<group>"; };
+		8A5D0EAA24A4F5490009DAF5 /* SwiftDisks+Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftDisks+Notifications.swift"; sourceTree = "<group>"; };
+		8A5D0EAC24A4F5A90009DAF5 /* SwiftDisks+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftDisks+Delegate.swift"; sourceTree = "<group>"; };
 		8A67282724A3E23E008E0CA4 /* Disk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
-		8A67282C24A3EBFC008E0CA4 /* DiskNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskNode.swift; sourceTree = "<group>"; };
-		8A67282E24A3EC0E008E0CA4 /* ChildNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildNode.swift; sourceTree = "<group>"; };
-		8A67283024A3EE64008E0CA4 /* APFSVolumeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APFSVolumeNode.swift; sourceTree = "<group>"; };
-		8A67283224A3F000008E0CA4 /* APFSPhysicalStoreNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APFSPhysicalStoreNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +116,14 @@
 		8A32C4E124A3DEBD0048CE7E /* SwiftDisks */ = {
 			isa = PBXGroup;
 			children = (
+				8A5D0E9824A4DC740009DAF5 /* Helpers */,
 				8A32C4F724A3DFBE0048CE7E /* Scripts */,
 				8A32C4EC24A3DEF10048CE7E /* Models */,
 				8A32C4E224A3DEBD0048CE7E /* SwiftDisks.h */,
 				8A32C4E324A3DEBD0048CE7E /* Info.plist */,
 				8A32C4EA24A3DECF0048CE7E /* SwiftDisks.swift */,
+				8A5D0EAA24A4F5490009DAF5 /* SwiftDisks+Notifications.swift */,
+				8A5D0EAC24A4F5A90009DAF5 /* SwiftDisks+Delegate.swift */,
 			);
 			path = SwiftDisks;
 			sourceTree = "<group>";
@@ -129,7 +148,6 @@
 		8A32C4FD24A3DFE50048CE7E /* SwiftDisksDemo */ = {
 			isa = PBXGroup;
 			children = (
-				8A67282B24A3EBF1008E0CA4 /* Nodes */,
 				8A32C4FE24A3DFE50048CE7E /* AppDelegate.swift */,
 				8A32C50024A3DFE50048CE7E /* ViewController.swift */,
 				8A32C50224A3DFE70048CE7E /* Assets.xcassets */,
@@ -139,6 +157,26 @@
 				8A511CB624A40A2E00D93AA7 /* MenuOutlineView.swift */,
 			);
 			path = SwiftDisksDemo;
+			sourceTree = "<group>";
+		};
+		8A5D0E9524A4D65C0009DAF5 /* APFS */ = {
+			isa = PBXGroup;
+			children = (
+				8A5D0E9324A4D64C0009DAF5 /* APFSVolumeNode.swift */,
+				8A5D0E9624A4D66E0009DAF5 /* APFSPhysicalStoreNode.swift */,
+			);
+			path = APFS;
+			sourceTree = "<group>";
+		};
+		8A5D0E9824A4DC740009DAF5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8A5D0E9924A4DC860009DAF5 /* FormatEraseHelper.swift */,
+				8A5D0E9B24A4DD4A0009DAF5 /* NameGenerator.swift */,
+				8A5D0EA024A4DEF10009DAF5 /* TaskHelper.swift */,
+				8A5D0EA624A4F1C30009DAF5 /* EjectUnmountHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		8A67282524A3E226008E0CA4 /* Decoder */ = {
@@ -155,20 +193,14 @@
 		8A67282624A3E22F008E0CA4 /* Output */ = {
 			isa = PBXGroup;
 			children = (
+				8A5D0E9524A4D65C0009DAF5 /* APFS */,
 				8A67282724A3E23E008E0CA4 /* Disk.swift */,
+				8A5D0E8F24A4D61F0009DAF5 /* ChildDiskNode.swift */,
+				8A5D0E9124A4D6340009DAF5 /* DiskNodeType.swift */,
+				8A5D0EA424A4EA2D0009DAF5 /* EraseResult.swift */,
+				8A5D0EA824A4F1F20009DAF5 /* EjectResult.swift */,
 			);
 			path = Output;
-			sourceTree = "<group>";
-		};
-		8A67282B24A3EBF1008E0CA4 /* Nodes */ = {
-			isa = PBXGroup;
-			children = (
-				8A67282C24A3EBFC008E0CA4 /* DiskNode.swift */,
-				8A67282E24A3EC0E008E0CA4 /* ChildNode.swift */,
-				8A67283024A3EE64008E0CA4 /* APFSVolumeNode.swift */,
-				8A67283224A3F000008E0CA4 /* APFSPhysicalStoreNode.swift */,
-			);
-			path = Nodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,12 +316,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A5D0E9224A4D6340009DAF5 /* DiskNodeType.swift in Sources */,
 				8A67282824A3E23E008E0CA4 /* Disk.swift in Sources */,
+				8A5D0E9424A4D64C0009DAF5 /* APFSVolumeNode.swift in Sources */,
+				8A5D0EA124A4DEF10009DAF5 /* TaskHelper.swift in Sources */,
 				8A32C4F124A3DEFC0048CE7E /* DiskList.swift in Sources */,
 				8A32C4F324A3DEFC0048CE7E /* RawAPFSVolume.swift in Sources */,
+				8A5D0EA924A4F1F20009DAF5 /* EjectResult.swift in Sources */,
+				8A5D0EAD24A4F5A90009DAF5 /* SwiftDisks+Delegate.swift in Sources */,
+				8A5D0E9A24A4DC860009DAF5 /* FormatEraseHelper.swift in Sources */,
+				8A5D0EA724A4F1C30009DAF5 /* EjectUnmountHelper.swift in Sources */,
+				8A5D0E9C24A4DD4A0009DAF5 /* NameGenerator.swift in Sources */,
 				8A32C4EB24A3DECF0048CE7E /* SwiftDisks.swift in Sources */,
 				8A32C4F224A3DEFC0048CE7E /* DisksAndPartitions.swift in Sources */,
+				8A5D0EAB24A4F5490009DAF5 /* SwiftDisks+Notifications.swift in Sources */,
+				8A5D0E9024A4D61F0009DAF5 /* ChildDiskNode.swift in Sources */,
+				8A5D0E9724A4D66E0009DAF5 /* APFSPhysicalStoreNode.swift in Sources */,
 				8A32C4F424A3DEFC0048CE7E /* APFSPhysicalStore.swift in Sources */,
+				8A5D0EA524A4EA2D0009DAF5 /* EraseResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,10 +341,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A67283324A3F000008E0CA4 /* APFSPhysicalStoreNode.swift in Sources */,
-				8A67282F24A3EC0E008E0CA4 /* ChildNode.swift in Sources */,
-				8A67282D24A3EBFC008E0CA4 /* DiskNode.swift in Sources */,
-				8A67283124A3EE64008E0CA4 /* APFSVolumeNode.swift in Sources */,
 				8A32C50124A3DFE50048CE7E /* ViewController.swift in Sources */,
 				8A32C4FF24A3DFE50048CE7E /* AppDelegate.swift in Sources */,
 				8A511CB724A40A2E00D93AA7 /* MenuOutlineView.swift in Sources */,

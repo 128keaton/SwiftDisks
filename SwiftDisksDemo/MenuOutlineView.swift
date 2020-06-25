@@ -11,9 +11,11 @@ import AppKit
 
 protocol MenuOutlineViewDelegate: NSOutlineViewDelegate {
     func outlineView(outlineView: NSOutlineView, menuForItem item: AnyObject) -> NSMenu?
+    func menuOpenedForItem(item: Any)
 }
 
 class MenuOutlineView: NSOutlineView {
+    private (set) public var itemForActiveMenu: Any?
 
     override func menu(for event: NSEvent) -> NSMenu? {
         let point = self.convert(event.locationInWindow, from: nil)
@@ -24,7 +26,27 @@ class MenuOutlineView: NSOutlineView {
             return nil
         }
 
-        return (self.delegate as! MenuOutlineViewDelegate).outlineView(outlineView: self, menuForItem: item as AnyObject)
+        self.itemForActiveMenu = item
+
+        if let menu = (self.delegate as! MenuOutlineViewDelegate).outlineView(outlineView: self, menuForItem: item as AnyObject) {
+            menu.delegate = self
+            return menu
+        }
+
+        return nil
     }
 
+}
+
+
+extension MenuOutlineView: NSMenuDelegate {
+    func menuDidClose(_ menu: NSMenu) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.itemForActiveMenu = nil
+        }
+    }
+
+    func menuWillOpen(_ menu: NSMenu) {
+        (self.delegate as? MenuOutlineViewDelegate)?.menuOpenedForItem(item: self.itemForActiveMenu as Any)
+    }
 }
