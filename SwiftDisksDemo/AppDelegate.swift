@@ -52,5 +52,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         defaults.synchronize()
     }
 
+    @IBAction func openGitHub(_ sender: NSMenuItem) {
+        NSWorkspace.shared.open(URL(string: "https://github.com/128keaton/SwiftDisks")!)
+    }
 }
 
