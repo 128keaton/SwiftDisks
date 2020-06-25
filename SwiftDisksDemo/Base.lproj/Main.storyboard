@@ -89,10 +89,11 @@
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Disks" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="576" y="366" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="480" height="270"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -199,10 +200,6 @@
                                     </subviews>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </clipView>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="477" id="Ugi-gh-Xpa"/>
-                                    <constraint firstAttribute="height" constant="209" id="oTe-T0-Ufc"/>
-                                </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="e1g-FN-9hL">
                                     <rect key="frame" x="-100" y="-100" width="477" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
@@ -214,10 +211,11 @@
                             </scrollView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="E4E-4c-tZH" firstAttribute="width" secondItem="m2S-Jp-Qdl" secondAttribute="width" id="2Oa-d3-dFK"/>
+                            <constraint firstItem="E4E-4c-tZH" firstAttribute="height" secondItem="m2S-Jp-Qdl" secondAttribute="height" multiplier="0.853061" id="3qN-6k-UFg"/>
                             <constraint firstItem="E4E-4c-tZH" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="3sQ-9b-Gsb"/>
                             <constraint firstItem="E4E-4c-tZH" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="36" id="6w1-K7-9t4"/>
                             <constraint firstItem="E4E-4c-tZH" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="36" id="9Yb-D7-mbJ"/>
-                            <constraint firstItem="E4E-4c-tZH" firstAttribute="width" secondItem="m2S-Jp-Qdl" secondAttribute="width" id="D9g-I6-Yvt"/>
                             <constraint firstAttribute="bottom" secondItem="E4E-4c-tZH" secondAttribute="bottom" id="Fek-bL-zJy"/>
                             <constraint firstItem="E4E-4c-tZH" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" constant="18" id="aWS-Gf-Vfe"/>
                             <constraint firstItem="E4E-4c-tZH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="dqI-Tk-HmX"/>

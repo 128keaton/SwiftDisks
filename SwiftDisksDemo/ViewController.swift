@@ -29,10 +29,12 @@ class ViewController: NSViewController {
 
         SwiftDisks.setDelegate(self)
         SwiftDisks.listenForDiskChanges()
-        
+
+        self.outlineView?.action = #selector(clickedRow(_:))
+
         self.getAllDisks()
     }
-    
+
     func getCachedDisks() {
         self.getAllDisks(lockUI: true, bypassCache: false)
     }
@@ -47,7 +49,7 @@ class ViewController: NSViewController {
             DispatchQueue.main.async {
                 self.unlockUI()
                 self.afterFetch()
-                self.afterFetch = {}
+                self.afterFetch = { }
             }
         }
     }
@@ -133,7 +135,7 @@ class ViewController: NSViewController {
                     if (!result.didSucceed), let errorMessage = result.errorMessage {
                         self.showErrorAlert(message: errorMessage)
                     }
-                    
+
                     self.getAllDisks()
                 }
             }
@@ -229,6 +231,24 @@ class ViewController: NSViewController {
 
         return alert.runModal()
     }
+
+    @objc func clickedRow(_ sender: NSOutlineView) {
+        let clickedItem = sender.item(atRow: sender.clickedRow) as AnyObject
+        sender.expandItem(clickedItem, expandChildren: true)
+        
+        if let menu = self.outlineView(outlineView: sender, menuForItem: clickedItem),
+            let mouseLocation = self.view.window?.mouseLocationOutsideOfEventStream {
+            var offset: CGFloat = 20
+            
+            if let diskItem = clickedItem as? DiskNode {
+                offset += CGFloat(diskItem.children.count * 17)
+            }
+            
+            let offsetPoint = NSPoint(x: mouseLocation.x, y: mouseLocation.y - offset)
+            menu.popUp(positioning: nil, at: offsetPoint, in: self.view)
+        }
+
+    }
 }
 
 extension ViewController: SwiftDisksDelegate {
@@ -236,7 +256,7 @@ extension ViewController: SwiftDisksDelegate {
         if (information.changeType == .mounted), let mountPointURL = information.mountPointURL, UserDefaults.standard.bool(forKey: "openInFinder") {
             NSWorkspace.shared.open(mountPointURL)
         }
-        
+
         if (self.lockedOverlay == nil) {
             self.getAllDisks(lockUI: true)
         }
@@ -254,16 +274,20 @@ extension ViewController: MenuOutlineViewDelegate {
         var menu: NSMenu? = nil
 
         if let item = item as? DiskNode {
-            menu = NSMenu(title: "Disk\(item.isBootDrive() ? " (Bootable)" : "")")
+            menu = NSMenu(title: "Disk")
             menu?.addItem(withTitle: menu!.title, action: nil, keyEquivalent: "")
             menu?.addItem(withTitle: "Device ID: \(item.deviceID)", action: nil, keyEquivalent: "")
             menu?.addItem(withTitle: "Size: \(item.size)", action: nil, keyEquivalent: "")
             menu?.addItem(withTitle: "Content: \(item.content)", action: nil, keyEquivalent: "")
             menu?.addItem(withTitle: "Mount Point: \(item.mountPoint)", action: nil, keyEquivalent: "")
             menu?.addItem(withTitle: "Volume Name: \(item.volumeName)", action: nil, keyEquivalent: "")
+
             if let physicalDisk = item.physicalDisk {
                 menu?.addItem(withTitle: "Physical Disk: \(physicalDisk.deviceID)", action: nil, keyEquivalent: "")
             }
+
+            menu?.addItem(withTitle: "APFS Formatted: \(item.isAPFS() ? "Yes" : "No")", action: nil, keyEquivalent: "")
+            menu?.addItem(withTitle: "Bootable: \(item.isBootDrive() ? "Yes" : "No")", action: nil, keyEquivalent: "")
 
             menu?.addItem(withTitle: "Erase (APFS)", action: #selector(eraseDiskAPFS), keyEquivalent: "")
             menu?.addItem(withTitle: "Erase (JHFS+)", action: #selector(eraseDiskHFS), keyEquivalent: "")
@@ -311,6 +335,8 @@ extension ViewController: NSOutlineViewDelegate, NSOutlineViewDataSource {
 
         return false
     }
+
+
 
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
         var view: NSTableCellView?
