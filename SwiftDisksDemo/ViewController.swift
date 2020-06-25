@@ -38,7 +38,7 @@ class ViewController: NSViewController {
             self.lockUI()
         }
 
-        SwiftDisks.getAllDisks { (allDisks: [DiskNode]) in
+        SwiftDisks.getAllDisks(bypassCache: true) { (allDisks: [DiskNode]) in
             self.allDisks = allDisks
             DispatchQueue.main.async {
                 self.unlockUI()

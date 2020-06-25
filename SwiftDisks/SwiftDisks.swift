@@ -11,7 +11,10 @@ import AppKit
 
 public class SwiftDisks {
     private static var instance: SwiftDisks?
+    private static var cachedDisks: [DiskNode] = []
+    
     var delegate: SwiftDisksDelegate?
+
     
     public static var safeMode: Bool = true {
         didSet {
@@ -19,6 +22,7 @@ public class SwiftDisks {
         }
     }
     
+    /// Set the delegate for disk notifications
     public static func setDelegate(_ delegate: SwiftDisksDelegate) {
         if (self.instance == nil) {
             self.instance = SwiftDisks()
@@ -27,6 +31,7 @@ public class SwiftDisks {
         self.instance?.delegate = delegate
     }
     
+    /// Listen for disk eject/unmount and mount
     public static func listenForDiskChanges() {
         if (self.instance == nil) {
             self.instance = SwiftDisks()
@@ -35,9 +40,13 @@ public class SwiftDisks {
         self.instance?.registerSelfForNotifications()
     }
     
+    /// Get all disks cached
+    public static func getAllCachedDisks() -> [DiskNode] {
+        return self.cachedDisks
+    }
 
     /// Get all disks available with a callback
-    public static func getAllDisks(_ callback: @escaping ([DiskNode]) -> ()) {
+    public static func getAllDisks(bypassCache: Bool = true, _ callback: @escaping ([DiskNode]) -> ()) {
         let scriptPath = "\(Bundle(identifier: "kbrleson.SwiftDisks")!.resourcePath!)/list-disks-json.sh"
         var allDisks: [DiskNode] = []
 
@@ -51,6 +60,8 @@ public class SwiftDisks {
                 print("Error parsing Disk Utility output: \(error.localizedDescription)")
                 callback(allDisks)
             }
+            
+            self.cachedDisks = allDisks
         }
 
     }
