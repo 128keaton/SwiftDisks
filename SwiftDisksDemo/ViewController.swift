@@ -11,10 +11,20 @@ import SwiftDisks
 
 class ViewController: NSViewController {
     @IBOutlet var outlineView: MenuOutlineView?
+    @IBOutlet var tableView: NSTableView?
 
     private var selectedDisk: DiskNode?
     private var lockedOverlay: NSView?
     private var afterFetch: () -> Void = { }
+    private var selectedItemProperties: [String] = []
+
+    var selectedItem: AnyObject? {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView?.reloadData()
+            }
+        }
+    }
 
     var allDisks: [DiskNode] = [] {
         didSet {
@@ -235,19 +245,33 @@ class ViewController: NSViewController {
     @objc func clickedRow(_ sender: NSOutlineView) {
         let clickedItem = sender.item(atRow: sender.clickedRow) as AnyObject
         sender.expandItem(clickedItem, expandChildren: true)
-        
-        if let menu = self.outlineView(outlineView: sender, menuForItem: clickedItem),
-            let mouseLocation = self.view.window?.mouseLocationOutsideOfEventStream {
-            var offset: CGFloat = 20
-            
-            if let diskItem = clickedItem as? DiskNode {
-                offset += CGFloat(diskItem.children.count * 17)
-            }
-            
-            let offsetPoint = NSPoint(x: mouseLocation.x, y: mouseLocation.y - offset)
-            menu.popUp(positioning: nil, at: offsetPoint, in: self.view)
+
+        if let menu = self.outlineView(outlineView: sender, menuForItem: clickedItem) {
+            self.selectedItemProperties = menu.items.filter({ (menuItem) -> Bool in
+                return menuItem.action == nil
+            }).map({ (menuItem) -> String in
+                return menuItem.title
+            })
         }
 
+        self.selectedItem = clickedItem
+    }
+}
+
+extension ViewController: NSTableViewDelegate, NSTableViewDataSource {
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return self.selectedItemProperties.count
+    }
+
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let infoText = self.selectedItemProperties[row]
+
+        if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "DiskInfoCell"), owner: nil) as? NSTableCellView {
+            cell.textField?.stringValue = infoText
+            return cell
+        }
+
+        return nil
     }
 }
 

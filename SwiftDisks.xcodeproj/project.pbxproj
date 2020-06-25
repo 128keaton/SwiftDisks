@@ -33,6 +33,8 @@
 		8A5D0EAD24A4F5A90009DAF5 /* SwiftDisks+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0EAC24A4F5A90009DAF5 /* SwiftDisks+Delegate.swift */; };
 		8A5D0EB024A4F8250009DAF5 /* ExpiringCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0EAF24A4F8250009DAF5 /* ExpiringCache.swift */; };
 		8A5D0EB524A4FBDE0009DAF5 /* DiskChangeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D0EB424A4FBDE0009DAF5 /* DiskChangeInformation.swift */; };
+		8A5D0EBD24A523AB0009DAF5 /* SwiftDisks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A32C4DF24A3DEBD0048CE7E /* SwiftDisks.framework */; };
+		8A5D0EBE24A523AB0009DAF5 /* SwiftDisks.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8A32C4DF24A3DEBD0048CE7E /* SwiftDisks.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8A67282824A3E23E008E0CA4 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A67282724A3E23E008E0CA4 /* Disk.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +46,28 @@
 			remoteGlobalIDString = 8A32C4DE24A3DEBD0048CE7E;
 			remoteInfo = SwiftDisks;
 		};
+		8A5D0EBF24A523AB0009DAF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A32C4D624A3DEBD0048CE7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A32C4DE24A3DEBD0048CE7E;
+			remoteInfo = SwiftDisks;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8A5D0EC124A523AB0009DAF5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8A5D0EBE24A523AB0009DAF5 /* SwiftDisks.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8A32C4DF24A3DEBD0048CE7E /* SwiftDisks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftDisks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A5D0EBD24A523AB0009DAF5 /* SwiftDisks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +129,7 @@
 				8A32C4E124A3DEBD0048CE7E /* SwiftDisks */,
 				8A32C4FD24A3DFE50048CE7E /* SwiftDisksDemo */,
 				8A32C4E024A3DEBD0048CE7E /* Products */,
+				8A5D0EBC24A523AB0009DAF5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,6 +217,13 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		8A5D0EBC24A523AB0009DAF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8A67282524A3E226008E0CA4 /* Decoder */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,11 +288,13 @@
 				8A32C4F824A3DFE50048CE7E /* Sources */,
 				8A32C4F924A3DFE50048CE7E /* Frameworks */,
 				8A32C4FA24A3DFE50048CE7E /* Resources */,
+				8A5D0EC124A523AB0009DAF5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				8A511CB524A4090200D93AA7 /* PBXTargetDependency */,
+				8A5D0EC024A523AB0009DAF5 /* PBXTargetDependency */,
 			);
 			name = SwiftDisksDemo;
 			productName = SwiftDisksDemo;
@@ -370,6 +404,11 @@
 			isa = PBXTargetDependency;
 			target = 8A32C4DE24A3DEBD0048CE7E /* SwiftDisks */;
 			targetProxy = 8A511CB424A4090200D93AA7 /* PBXContainerItemProxy */;
+		};
+		8A5D0EC024A523AB0009DAF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A32C4DE24A3DEBD0048CE7E /* SwiftDisks */;
+			targetProxy = 8A5D0EBF24A523AB0009DAF5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
